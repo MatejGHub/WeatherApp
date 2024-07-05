@@ -3,7 +3,11 @@ interface City {
   title: string;
 }
 
-const TopButtons = () => {
+interface TopButtonsProps {
+  setCityName: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const TopButtons = ({ setCityName }: TopButtonsProps) => {
   const cities: City[] = [
     {
       id: 1,
@@ -28,7 +32,13 @@ const TopButtons = () => {
     <div className="flex items-center justify-around my-6">
       {cities.map((city) => {
         return (
-          <button key={city.id} className="text-white text-lg font-medium">
+          <button
+            key={city.id}
+            className="text-white text-lg font-medium transition ease-in hover:scale-110"
+            onClick={() => {
+              setCityName(city.title);
+            }}
+          >
             {city.title}
           </button>
         );

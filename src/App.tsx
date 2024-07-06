@@ -7,6 +7,7 @@ import TopButtons from "./components/TopButtons";
 import "./index.css";
 
 interface DailyWeatherDataProps {
+  id: number;
   day: string;
   weather: string;
   temperature: number;
@@ -30,6 +31,7 @@ function App() {
   const [dailyWeatherData, setDailyWeatherData] = useState<
     DailyWeatherDataProps[]
   >({
+    id: 0,
     day: "",
     weather: "",
     temperature: 0
@@ -64,26 +66,31 @@ function App() {
         });
         setDailyWeatherData([
           {
+            id: data.city.id,
             day: data.list[0].dt_txt,
             weather: data.list[0].weather[0].icon,
             temperature: data.list[0].main.temp
           },
           {
+            id: data.city.id,
             day: data.list[8].dt_txt,
             weather: data.list[8].weather[0].icon,
             temperature: data.list[8].main.temp
           },
           {
+            id: data.city.id,
             day: data.list[16].dt_txt,
             weather: data.list[16].weather[0].icon,
             temperature: data.list[16].main.temp
           },
           {
+            id: data.city.id,
             day: data.list[24].dt_txt,
             weather: data.list[24].weather[0].icon,
             temperature: data.list[24].main.temp
           },
           {
+            id: data.city.id,
             day: data.list[32].dt_txt,
             weather: data.list[32].weather[0].icon,
             temperature: data.list[32].main.temp

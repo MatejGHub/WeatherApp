@@ -3,18 +3,8 @@ interface TimeAndLocationProps {
   countryName: string;
 }
 
-interface optionsDateProps {
-  weekday: string;
-  year: string;
-  month: string;
-  day: string;
-}
-
-interface optionsTimeProps {
-  hour: string;
-  minute: string;
-  hour12: boolean;
-}
+interface optionsDateProps {}
+interface optionsTimeProps {}
 
 //Get current time and date
 const currentTimeAndDate = new Date();

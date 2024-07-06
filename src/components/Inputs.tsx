@@ -35,7 +35,7 @@ const Inputs = ({ setCityName, setIsCelsius }: InputsProps) => {
           }}
           className="text-3xl text-white cursor-pointer transition ease-out hover:scale-125"
         />
-        <FetchUserLocation setCityName={setCityName} />
+        <FetchUserLocation />
       </div>
       <div className="flex flex-row w-1/4 items-center justify-center">
         <button className="text-white text-xl cursor-pointer" name="metric">

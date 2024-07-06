@@ -30,12 +30,7 @@ function App() {
   });
   const [dailyWeatherData, setDailyWeatherData] = useState<
     DailyWeatherDataProps[]
-  >({
-    id: 0,
-    day: "",
-    weather: "",
-    temperature: 0
-  });
+  >([{ id: 0, day: "", weather: "", temperature: 0 }]);
   const [isCelsius, setIsCelsius] = useState(true);
 
   // Fetch weather data

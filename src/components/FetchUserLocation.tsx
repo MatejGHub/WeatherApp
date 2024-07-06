@@ -1,11 +1,7 @@
 import { SlLocationPin } from "react-icons/sl";
 
-interface FetchUserLocationProps {
-  setCityName: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const FetchUserLocation = ({ setCityName }: FetchUserLocationProps) => {
-  const sucessCallback = (position) => {
+const FetchUserLocation = () => {
+  const sucessCallback = (position: any) => {
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
     const latitude = position.coords.latitude;
@@ -25,7 +21,7 @@ const FetchUserLocation = ({ setCityName }: FetchUserLocationProps) => {
       });
   };
 
-  const errorCallback = (error) => {
+  const errorCallback = (error: any) => {
     console.error(error);
   };
 

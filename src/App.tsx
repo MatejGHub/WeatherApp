@@ -6,7 +6,7 @@ import TimeAndLocation from "./components/TimeAndLocation";
 import TopButtons from "./components/TopButtons";
 import "./index.css";
 
-interface DailyForecast {
+interface DailyWeatherDataProps {
   day: string;
   weather: string;
   temperature: number;
@@ -27,7 +27,9 @@ function App() {
     temperature: 0,
     icon: ""
   });
-  const [dailyWeatherData, setDailyWeatherData] = useState({
+  const [dailyWeatherData, setDailyWeatherData] = useState<
+    DailyWeatherDataProps[]
+  >({
     day: "",
     weather: "",
     temperature: 0
@@ -60,7 +62,7 @@ function App() {
           temperature: data.list[0].main.temp,
           icon: data.list[0].weather[0].icon
         });
-        setDailyWeatherData<DailyForecast[]>([
+        setDailyWeatherData([
           {
             day: data.list[0].dt_txt,
             weather: data.list[0].weather[0].icon,

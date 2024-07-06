@@ -3,15 +3,32 @@ interface TimeAndLocationProps {
   countryName: string;
 }
 
+interface optionsDateProps {
+  weekday: string;
+  year: string;
+  month: string;
+  day: string;
+}
+
+interface optionsTimeProps {
+  hour: string;
+  minute: string;
+  hour12: boolean;
+}
+
 //Get current time and date
 const currentTimeAndDate = new Date();
-const optionsDate = {
+const optionsDate: optionsDateProps = {
   weekday: "long",
   year: "numeric",
   month: "long",
   day: "numeric"
 };
-const optionsTime = { hour: "2-digit", minute: "2-digit", hour12: false };
+const optionsTime: optionsTimeProps = {
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false
+};
 
 const formattedDate = new Intl.DateTimeFormat("en-GB", optionsDate).format(
   currentTimeAndDate

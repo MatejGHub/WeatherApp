@@ -43,7 +43,7 @@ function App() {
   // Fetch weather data
   useEffect(() => {
     const apiKey = "6ab467e6149af4532a021d5e374b2ce2";
-    const url = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
 
     fetch(url)
       .then((response) => {

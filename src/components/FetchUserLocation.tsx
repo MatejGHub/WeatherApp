@@ -1,13 +1,12 @@
 import { SlLocationPin } from "react-icons/sl";
 
 const FetchUserLocation = () => {
-  const sucessCallback = (position: any) => {
+  const sucessCallback = (position: GeolocationPosition) => {
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=6ab467e6149af4532a021d5e374b2ce2`;
-
     fetch(url)
       .then((response) => {
         if (!response.ok) {
@@ -17,11 +16,10 @@ const FetchUserLocation = () => {
       })
       .then((data) => {
         console.log(data.name);
-        // Why is setcityname not a function and not working? Fix it.
       });
   };
 
-  const errorCallback = (error: any) => {
+  const errorCallback = (error: GeolocationPositionError) => {
     console.error(error);
   };
 

@@ -34,7 +34,7 @@ const TemperatureAndDetails = ({
     minute: "2-digit",
     hour12: true
   });
-  const sunsetDate = new Date(weatherData.sunset * 1000); // Convert Unix timestamp to milliseconds
+  const sunsetDate = new Date(weatherData.sunset * 1000);
   const sunsetTime = sunsetDate.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
